@@ -1,6 +1,8 @@
   https://segmentfault.com/a/1190000000602050
   
   https://segmentfault.com/q/1010000004596650
+  
+  https://www.zhihu.com/question/34183746/answer/58068402
 
 ## 生成对象的方法
     1.使用new关键字创建 
@@ -18,3 +20,5 @@
     2.这个对象会被执行[[prototype]]连接原型
     3.函数调用中的this会绑定到新对象
     4.如果函数没有返回其他对象，那么new 构造就会自动返回这个新对象
+ 
+##prototype 和 __proto__
