@@ -35,7 +35,7 @@
 **这部分详细可以看官网或者他人博客。**
 ## rpc（Remote Procedure Call Protocol）
 1. 简介：rpc是远程过程调用的意思，指利用网络在一端应用调用另一端应用的协议。我们常见的网络应用都算做rpc应用。rpc是一类应用的统称协议，可以基于不同的网络协议。如http、tcp、udp等。这里我们需要实现基于protobuf的rpc应用，网络使用socket进行编写。
-2. 架构：protobuf的rpc的基本架构为![rpc架构](./rpc_base.jpg)
+2. 架构：protobuf的rpc的基本架构为![rpc架构](../pic/rpc_base.jpg)
 根据维基百科的原文其中1.6为通过stub调用server服务，这部分在编译proto后已经生成，2.5的数据序列化和反序列化已经由protobuf提供了方法，我们需要做的是将数据组合成我们想要的格式。3.4两步完全需要我们自己实现，这样做是为了适应各种网络协议。
 
 ```
