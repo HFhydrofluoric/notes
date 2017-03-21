@@ -1,6 +1,6 @@
-#rpc应用和protobuf的学习
+# rpc应用和protobuf的学习
 
-##protobuf（protocol buffer）
+## protobuf（protocol buffer）
 1. 简介：protobuf是谷歌的一种数据协议，相比较json或者xml来说，protobuf的二进制格式存储空间要小很多，且与语言耦合性小，c、java、python等都有相应的编译工具，互相兼容。在服务器间数据传输十分常用，在分布式系统中尤为适用频繁。
 2. 安装：[在github上](https://github.com/google/protobuf/)上找到相对应的语言的版本并下载。解压 tar xzf 包，执行命令进行安装。</br>```./configure和make && make install``` </br>本文以python为例，要安装python的依赖则进入python文件夹进行以下的命令的安装</br>```python setup.py build和python setup.py test```</br>在.bash_profile文件中写入路径.使用```protoc --version```来查看版本号。
 3. 使用：先编写test.proto文档,required为必填数据，optional为可选数据。package类似命名空间。syntax是编译器要求加上的版本说明</br>
@@ -33,7 +33,7 @@
   
 ```
 **这部分详细可以看官网或者他人博客。**
-##rpc（Remote Procedure Call Protocol）
+## rpc（Remote Procedure Call Protocol）
 1. 简介：rpc是远程过程调用的意思，指利用网络在一端应用调用另一端应用的协议。我们常见的网络应用都算做rpc应用。rpc是一类应用的统称协议，可以基于不同的网络协议。如http、tcp、udp等。这里我们需要实现基于protobuf的rpc应用，网络使用socket进行编写。
 2. 架构：protobuf的rpc的基本架构为![rpc架构](./rpc_base.jpg)
 根据维基百科的原文其中1.6为通过stub调用server服务，这部分在编译proto后已经生成，2.5的数据序列化和反序列化已经由protobuf提供了方法，我们需要做的是将数据组合成我们想要的格式。3.4两步完全需要我们自己实现，这样做是为了适应各种网络协议。
